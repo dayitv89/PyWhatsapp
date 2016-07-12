@@ -1,13 +1,14 @@
 # PyWhatsapp
-Python Selenium script for fun with web WhatsApp.
+Python Selenium script for fun with web WhatsApp. Thanks [Mak](https://github.com/mayanksaxena) to give this idea.
 
 ![status](https://rawgit.com/gauravds/PySelenium/master/imgs/status.svg)
 ![version](https://rawgit.com/gauravds/PySelenium/master/imgs/version.svg)
 
 ##### Uses
--  `Irritate_friend.py` for send a same message(message = Hi! are you there?) n times(number_of_times = 100) on script.
+-  `Irritate_friend.py` for send a same message(message = Hi! are you there?) n times(number_of_times = 10) on script.
 
-
+Run this script as `$python scr/Irritate_friend.py`
+It will open a chrome browser and then open web.WhatsApp.com and then immediate scan your QR code to login, and select friend to irritate. Script has 10 sec for all this process. And then enjoy irritate friend.
 
 ### Dependencies
 - ![Platform](https://rawgit.com/gauravds/PySelenium/master/imgs/platform.svg)(May work on linux)

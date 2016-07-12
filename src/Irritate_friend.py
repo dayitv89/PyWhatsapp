@@ -36,7 +36,7 @@ def web_driver_quit():
 ## actual login in hockey app site
 def whatsapp_login():
 	driver.get('https://web.whatsapp.com/');
-	wait(5)
+	wait(10)
 
 def sendMessage(msg='Hi!'):
 	web_obj = driver.find_element_by_xpath("//div[@contenteditable='true']")
