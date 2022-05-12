@@ -7,7 +7,7 @@ Python Selenium script for fun with web WhatsApp. Thanks [Mak](https://github.co
 ##### Uses
 -  `Irritate_friend.py` for send a same message(message = Hi! are you there?) n times(number_of_times = 10) on script.
 
-Run this script as `$python scr/Irritate_friend.py`
+Run this script as `$python src/Irritate_friend.py`
 It will open a chrome browser and then open web.WhatsApp.com and then immediate scan your QR code to login, and select friend to irritate. Script has 10 sec for all this process. And then enjoy irritate friend.
 
 ### Dependencies
@@ -18,8 +18,9 @@ It will open a chrome browser and then open web.WhatsApp.com and then immediate 
 - chromedriver_mac32.zip web browser driver (Also available for linux)
 
 ### Installation
-- `$ sudo pip install selenium`
+- `$ sudo pip3 install selenium`
   [or Find in resource folder for Selenium-2.53.2]
 - copy extracted of chromedriver_mac32.zip and paste into `/usr/local/bin`. [Find in resource]
+    - download driver from https://chromedriver.chromium.org/downloads
 
 voila!
