@@ -7,10 +7,9 @@
 
 
 ### configurations
-number_of_times = 10
+waiting_time = 1
+number_of_times = 3
 message = 'Hi! are you there?'
-
-
 
 ### Selenium automation
 #- download http://chromedriver.storage.googleapis.com/index.html?path=2.21/
@@ -18,6 +17,7 @@ message = 'Hi! are you there?'
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.by import By
 import time
 
 ## Selenium web drivers
@@ -41,7 +41,7 @@ def whatsapp_login():
 	while True:
 		time.sleep(1)
 		try:
-			appLoad = driver.find_element_by_xpath("//div[@title='Type a message']")
+			appLoad = driver.find_element(By.XPATH,"//div[@title='Type a message']")
 			if appLoad:
 				break
 		except NoSuchElementException:
@@ -50,17 +50,24 @@ def whatsapp_login():
 			print('Login Checked')
 
 def sendMessage(msg='Hi!'):
-	web_obj = driver.find_element_by_xpath("//div[@title='Type a message']")
+	web_obj = driver.find_element(By.XPATH,"//div[@title='Type a message']")
 	web_obj.send_keys(msg)
 	web_obj.send_keys(Keys.RETURN)
 
+
+def send_message_in_loop():
+	for i in range(number_of_times):
+		sendMessage(message)
+		print(str(i+1) + " message sent & waiting for seconds: "+str(waiting_time))
+		wait(waiting_time)
+	print("Process complete successfully")
 
 ### Main Method
 if __name__ == "__main__":
 	web_driver_load()
 	whatsapp_login()
-	for i in range(number_of_times):
-		sendMessage(message)
-		wait()
-	print("Process complete successfully")
+	name = 'send'
+	while name != 'q':
+		send_message_in_loop()
+		name = input("continue any key, quit press q: ") 
 	web_driver_quit()
